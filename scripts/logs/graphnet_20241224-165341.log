@@ -1,0 +1,2 @@
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2024-12-24 16:53:41 - Logger.__init__ - Writing log to [1mlogs/graphnet_20241224-165341.log[0m
+[1;34mgraphnet[0m [MainProcess] [33mWARNING [0m 2024-12-24 16:53:43 - __init__ - Setting one of `transform_target` and `transform_inference`, but not the other.[0m

@@ -1,0 +1,144 @@
+[1;34mgraphnet[0m [MainProcess] [33mWARNING [0m 2025-02-26 12:33:28 - __init__ - GraphNeTDataModule did not receive an argument for `test_selection` and will therefore not have a prediction dataloader available.[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-26 12:33:28 - __init__ - GraphNeTDataModule did not receive an for `selection`. Selection will will automatically be created with a split of train: 0.9 and validation: 0.1[0m
+/n/holylfs05/LABS/arguelles_delgado_lab/Everyone/jbook/spack/var/spack/environments/graphnet/.spack-env/view/lib/python3.11/site-packages/torch/utils/data/dataloader.py:558: UserWarning: This DataLoader will create 10 worker processes in total. Our suggested max number of worker in current system is 4, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+[1;34mgraphnet[0m [MainProcess] [33mWARNING [0m 2025-02-26 12:33:31 - __init__ - Setting one of `transform_target` and `transform_inference`, but not the other.[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-26 12:33:31 - StandardModel.main - EarlyStopping has been added with a patience of 2.[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-26 12:33:31 - StandardModel.main - Training initiated with callbacks: ProgressBar, EarlyStopping, ModelCheckpoint[0m
+/n/holylfs05/LABS/arguelles_delgado_lab/Everyone/jbook/spack/var/spack/environments/graphnet/.spack-env/view/lib/python3.11/site-packages/lightning_fabric/plugins/environments/slurm.py:204: The `srun` command is available on your system but is not used. HINT: If your intention is to run Lightning on SLURM, prepend your python command with `srun` like so: srun python train_estimator.py ...
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+Within easy_model.py:
+Length of dataloader:  2239
+length of val_dataloader 2240
+You are using a CUDA device ('NVIDIA A100-SXM4-80GB') that has Tensor Cores. To properly utilize them, you should set `torch.set_float32_matmul_precision('medium' | 'high')` which will trade-off precision for performance. For more details, read https://pytorch.org/docs/stable/generated/torch.set_float32_matmul_precision.html#torch.set_float32_matmul_precision
+Initializing distributed: GLOBAL_RANK: 0, MEMBER: 1/1
+----------------------------------------------------------------------------------------------------
+distributed_backend=nccl
+All distributed processes registered. Starting with 1 processes
+----------------------------------------------------------------------------------------------------
+
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+/n/holylfs05/LABS/arguelles_delgado_lab/Everyone/jbook/spack/var/spack/environments/graphnet/.spack-env/view/lib/python3.11/site-packages/torch/optim/lr_scheduler.py:28: UserWarning: The verbose parameter is deprecated. Please use get_last_lr() to access the learning rate.
+  warnings.warn("The verbose parameter is deprecated. Please use get_last_lr() "
+
+  | Name              | Type       | Params
+-------------------------------------------------
+0 | _tasks            | ModuleList | 129
+1 | _graph_definition | KNNGraph   | 0
+2 | backbone          | DynEdge    | 1.4 M
+-------------------------------------------------
+1.4 M     Trainable params
+0         Non-trainable params
+1.4 M     Total params
+5.529     Total estimated model params size (MB)
+Sanity Checking DataLoader 0:   0%|                                                        | 0/2 [00:00<?, ?it/s]
+/n/holylfs05/LABS/arguelles_delgado_lab/Everyone/jbook/spack/opt/spack/linux-rocky8-icelake/gcc-8.5.0/python-3.11.9-3kjyspb5ggk7awajofefkc4r24aa6rao/lib/python3.11/multiprocessing/popen_fork.py:66: RuntimeWarning: Using fork() can cause Polars to deadlock in the child process.
+In addition, using fork() with Python in general is a recipe for mysterious
+deadlocks and crashes.
+
+The most likely reason you are seeing this error is because you are using the
+multiprocessing module on Linux, which uses fork() by default. This will be
+fixed in Python 3.14. Until then, you want to use the "spawn" context instead.
+
+See https://docs.pola.rs/user-guide/misc/multiprocessing/ for details.
+
+If you really know what your doing, you can silence this warning with the warning module
+or by setting POLARS_ALLOW_FORKING_THREAD=1.
+
+  self.pid = os.fork()
+Traceback (most recent call last):
+  File "/n/holylfs05/LABS/arguelles_delgado_lab/Everyone/jbook/double_cascade_identification/scripts/train_estimator.py", line 305, in <module>
+    main(
+  File "/n/holylfs05/LABS/arguelles_delgado_lab/Everyone/jbook/double_cascade_identification/scripts/train_estimator.py", line 211, in main
+    model.fit(
+  File "/n/holylfs05/LABS/arguelles_delgado_lab/Everyone/jbook/graphnet/src/graphnet/models/easy_model.py", line 173, in fit
+    trainer.fit(
+  File "/n/holylfs05/LABS/arguelles_delgado_lab/Everyone/jbook/spack/var/spack/environments/graphnet/.spack-env/view/lib/python3.11/site-packages/pytorch_lightning/trainer/trainer.py", line 543, in fit
+    call._call_and_handle_interrupt(
+  File "/n/holylfs05/LABS/arguelles_delgado_lab/Everyone/jbook/spack/var/spack/environments/graphnet/.spack-env/view/lib/python3.11/site-packages/pytorch_lightning/trainer/call.py", line 43, in _call_and_handle_interrupt
+    return trainer.strategy.launcher.launch(trainer_fn, *args, trainer=trainer, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/n/holylfs05/LABS/arguelles_delgado_lab/Everyone/jbook/spack/var/spack/environments/graphnet/.spack-env/view/lib/python3.11/site-packages/pytorch_lightning/strategies/launchers/subprocess_script.py", line 105, in launch
+    return function(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/n/holylfs05/LABS/arguelles_delgado_lab/Everyone/jbook/spack/var/spack/environments/graphnet/.spack-env/view/lib/python3.11/site-packages/pytorch_lightning/trainer/trainer.py", line 579, in _fit_impl
+    self._run(model, ckpt_path=ckpt_path)
+  File "/n/holylfs05/LABS/arguelles_delgado_lab/Everyone/jbook/spack/var/spack/environments/graphnet/.spack-env/view/lib/python3.11/site-packages/pytorch_lightning/trainer/trainer.py", line 986, in _run
+    results = self._run_stage()
+              ^^^^^^^^^^^^^^^^^
+  File "/n/holylfs05/LABS/arguelles_delgado_lab/Everyone/jbook/spack/var/spack/environments/graphnet/.spack-env/view/lib/python3.11/site-packages/pytorch_lightning/trainer/trainer.py", line 1030, in _run_stage
+    self._run_sanity_check()
+  File "/n/holylfs05/LABS/arguelles_delgado_lab/Everyone/jbook/spack/var/spack/environments/graphnet/.spack-env/view/lib/python3.11/site-packages/pytorch_lightning/trainer/trainer.py", line 1059, in _run_sanity_check
+    val_loop.run()
+  File "/n/holylfs05/LABS/arguelles_delgado_lab/Everyone/jbook/spack/var/spack/environments/graphnet/.spack-env/view/lib/python3.11/site-packages/pytorch_lightning/loops/utilities.py", line 182, in _decorator
+    return loop_run(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/n/holylfs05/LABS/arguelles_delgado_lab/Everyone/jbook/spack/var/spack/environments/graphnet/.spack-env/view/lib/python3.11/site-packages/pytorch_lightning/loops/evaluation_loop.py", line 135, in run
+    self._evaluation_step(batch, batch_idx, dataloader_idx, dataloader_iter)
+  File "/n/holylfs05/LABS/arguelles_delgado_lab/Everyone/jbook/spack/var/spack/environments/graphnet/.spack-env/view/lib/python3.11/site-packages/pytorch_lightning/loops/evaluation_loop.py", line 396, in _evaluation_step
+    output = call._call_strategy_hook(trainer, hook_name, *step_args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/n/holylfs05/LABS/arguelles_delgado_lab/Everyone/jbook/spack/var/spack/environments/graphnet/.spack-env/view/lib/python3.11/site-packages/pytorch_lightning/trainer/call.py", line 309, in _call_strategy_hook
+    output = fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/n/holylfs05/LABS/arguelles_delgado_lab/Everyone/jbook/spack/var/spack/environments/graphnet/.spack-env/view/lib/python3.11/site-packages/pytorch_lightning/strategies/strategy.py", line 411, in validation_step
+    return self._forward_redirection(self.model, self.lightning_module, "validation_step", *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/n/holylfs05/LABS/arguelles_delgado_lab/Everyone/jbook/spack/var/spack/environments/graphnet/.spack-env/view/lib/python3.11/site-packages/pytorch_lightning/strategies/strategy.py", line 642, in __call__
+    wrapper_output = wrapper_module(*args, **kwargs)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/n/holylfs05/LABS/arguelles_delgado_lab/Everyone/jbook/spack/var/spack/environments/graphnet/.spack-env/view/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/n/holylfs05/LABS/arguelles_delgado_lab/Everyone/jbook/spack/var/spack/environments/graphnet/.spack-env/view/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/n/holylfs05/LABS/arguelles_delgado_lab/Everyone/jbook/spack/var/spack/environments/graphnet/.spack-env/view/lib/python3.11/site-packages/torch/nn/parallel/distributed.py", line 1523, in forward
+    else self._run_ddp_forward(*inputs, **kwargs)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/n/holylfs05/LABS/arguelles_delgado_lab/Everyone/jbook/spack/var/spack/environments/graphnet/.spack-env/view/lib/python3.11/site-packages/torch/nn/parallel/distributed.py", line 1359, in _run_ddp_forward
+    return self.module(*inputs, **kwargs)  # type: ignore[index]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/n/holylfs05/LABS/arguelles_delgado_lab/Everyone/jbook/spack/var/spack/environments/graphnet/.spack-env/view/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/n/holylfs05/LABS/arguelles_delgado_lab/Everyone/jbook/spack/var/spack/environments/graphnet/.spack-env/view/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/n/holylfs05/LABS/arguelles_delgado_lab/Everyone/jbook/spack/var/spack/environments/graphnet/.spack-env/view/lib/python3.11/site-packages/pytorch_lightning/strategies/strategy.py", line 635, in wrapped_forward
+    out = method(*_args, **_kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/n/holylfs05/LABS/arguelles_delgado_lab/Everyone/jbook/graphnet/src/graphnet/models/easy_model.py", line 271, in validation_step
+    loss = self.shared_step(val_batch, batch_idx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/n/holylfs05/LABS/arguelles_delgado_lab/Everyone/jbook/graphnet/src/graphnet/models/standard_model.py", line 121, in shared_step
+    preds = self(batch)
+            ^^^^^^^^^^^
+  File "/n/holylfs05/LABS/arguelles_delgado_lab/Everyone/jbook/spack/var/spack/environments/graphnet/.spack-env/view/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/n/holylfs05/LABS/arguelles_delgado_lab/Everyone/jbook/spack/var/spack/environments/graphnet/.spack-env/view/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/n/holylfs05/LABS/arguelles_delgado_lab/Everyone/jbook/graphnet/src/graphnet/models/standard_model.py", line 110, in forward
+    preds = [task(x) for task in self._tasks]
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/n/holylfs05/LABS/arguelles_delgado_lab/Everyone/jbook/graphnet/src/graphnet/models/standard_model.py", line 110, in <listcomp>
+    preds = [task(x) for task in self._tasks]
+             ^^^^^^^
+  File "/n/holylfs05/LABS/arguelles_delgado_lab/Everyone/jbook/spack/var/spack/environments/graphnet/.spack-env/view/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/n/holylfs05/LABS/arguelles_delgado_lab/Everyone/jbook/spack/var/spack/environments/graphnet/.spack-env/view/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/n/holylfs05/LABS/arguelles_delgado_lab/Everyone/jbook/graphnet/src/graphnet/models/task/task.py", line 283, in forward
+    x = self._forward(x=x)
+        ^^^^^^^^^^^^^^^^^^
+  File "/n/holylfs05/LABS/arguelles_delgado_lab/Everyone/jbook/graphnet/src/graphnet/models/task/custom_tasks.py", line 26, in _forward
+    if x == -1:
+       ^^^^^^^
+RuntimeError: Boolean value of Tensor with more than one value is ambiguous

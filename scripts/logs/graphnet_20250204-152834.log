@@ -1,0 +1,7 @@
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-04 15:28:34 - Logger.__init__ - Writing log to [1mlogs/graphnet_20250204-152834.log[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-04 15:28:34 - <module> - features: ['dom_x', 'dom_y', 'dom_z', 'dom_time', 'charge', 'rde', 'pmt_area'][0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-04 15:28:34 - <module> - truth: ['energy', 'energy_track', 'energy_cascade', 'position_x', 'position_y', 'position_z', 'azimuth', 'zenith', 'pid', 'elasticity', 'interaction_type', 'inelasticity', 'stopped_muon'][0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-04 15:28:34 - main - No `val_dataloader_kwargs` given. This arg has been set to `train_dataloader_kwargs` with `shuffle` = False.[0m
+[1;34mgraphnet[0m [MainProcess] [33mWARNING [0m 2025-02-04 15:28:34 - __init__ - GraphNeTDataModule did not receive an argument for `test_selection` and will therefore not have a prediction dataloader available.[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-04 15:28:34 - __init__ - GraphNeTDataModule did not receive an for `selection`. Selection will will automatically be created with a split of train: 0.9 and validation: 0.1[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-04 15:28:34 - StringSelectionResolver.__init__ - Resolving selection: type(pid) == int[0m

@@ -1,0 +1,66 @@
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-26 11:37:47 - Logger.__init__ - Writing log to [1mlogs/graphnet_20250226-113747.log[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-26 11:37:47 - <module> - features: ['dom_x', 'dom_y', 'dom_z', 'dom_time', 'charge', 'rde', 'pmt_area'][0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-26 11:37:47 - <module> - truth: ['energy', 'energy_track', 'energy_cascade', 'position_x', 'position_y', 'position_z', 'azimuth', 'zenith', 'pid', 'elasticity', 'interaction_type', 'inelasticity', 'stopped_muon', 'dbang_decay_length', 'event_weight'][0m
+[1;34mgraphnet[0m [MainProcess] [33mWARNING [0m 2025-02-26 11:37:49 - __init__ - GraphNeTDataModule did not receive an argument for `test_selection` and will therefore not have a prediction dataloader available.[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-26 11:37:49 - __init__ - GraphNeTDataModule did not receive an for `selection`. Selection will will automatically be created with a split of train: 0.9 and validation: 0.1[0m
+[1;34mgraphnet[0m [MainProcess] [33mWARNING [0m 2025-02-26 11:37:51 - __init__ - Setting one of `transform_target` and `transform_inference`, but not the other.[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-26 11:37:51 - StandardModel.main - EarlyStopping has been added with a patience of 3.[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-26 11:37:51 - StandardModel.main - Training initiated with callbacks: ProgressBar, EarlyStopping, ModelCheckpoint[0m
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+You are using a CUDA device ('NVIDIA A100-SXM4-80GB') that has Tensor Cores. To properly utilize them, you should set `torch.set_float32_matmul_precision('medium' | 'high')` which will trade-off precision for performance. For more details, read https://pytorch.org/docs/stable/generated/torch.set_float32_matmul_precision.html#torch.set_float32_matmul_precision
+----------------------------------------------------------------------------------------------------
+distributed_backend=nccl
+All distributed processes registered. Starting with 1 processes
+----------------------------------------------------------------------------------------------------
+
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+
+  | Name              | Type       | Params
+-------------------------------------------------
+0 | _tasks            | ModuleList | 129   
+1 | _graph_definition | KNNGraph   | 0     
+2 | backbone          | DynEdge    | 1.4 M 
+-------------------------------------------------
+1.4 M     Trainable params
+0         Non-trainable params
+1.4 M     Total params
+5.529     Total estimated model params size (MB)
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-26 11:39:08 - on_advance_end - Epoch  0: 100%|[32m████████[0m| 1050/1050 [01:09<00:00, 15.06 batch(es)/s, lr=0.00099, val_loss=0.427, train_loss=0.447][0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-26 11:40:14 - on_advance_end - Epoch  1: 100%|[32m████████[0m| 1050/1050 [01:06<00:00, 15.78 batch(es)/s, lr=0.00097, val_loss=0.423, train_loss=0.423][0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-26 11:41:21 - on_advance_end - Epoch  2: 100%|[32m████████[0m| 1050/1050 [01:06<00:00, 15.81 batch(es)/s, lr=0.00095, val_loss=0.418, train_loss=0.421][0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-26 11:42:27 - on_advance_end - Epoch  3: 100%|[32m████████[0m| 1050/1050 [01:06<00:00, 15.77 batch(es)/s, lr=0.00093, val_loss=0.418, train_loss=0.420][0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-26 11:43:33 - on_advance_end - Epoch  4: 100%|[32m████████[0m| 1050/1050 [01:05<00:00, 16.09 batch(es)/s, lr=0.00091, val_loss=0.417, train_loss=0.419][0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-26 11:44:39 - on_advance_end - Epoch  5: 100%|[32m████████[0m| 1050/1050 [01:06<00:00, 15.79 batch(es)/s, lr=0.00089, val_loss=0.417, train_loss=0.419][0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-26 11:45:44 - on_advance_end - Epoch  6: 100%|[32m████████[0m| 1050/1050 [01:05<00:00, 16.10 batch(es)/s, lr=0.00087, val_loss=0.417, train_loss=0.418][0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-26 11:46:50 - on_advance_end - Epoch  7: 100%|[32m████████[0m| 1050/1050 [01:05<00:00, 16.10 batch(es)/s, lr=0.00085, val_loss=0.419, train_loss=0.418][0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-26 11:47:54 - on_advance_end - Epoch  8: 100%|[32m████████[0m| 1050/1050 [01:04<00:00, 16.32 batch(es)/s, lr=0.00083, val_loss=0.416, train_loss=0.417][0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-26 11:49:39 - on_advance_end - Epoch  9: 100%|[32m████████[0m| 1050/1050 [01:44<00:00, 10.05 batch(es)/s, lr=0.00081, val_loss=0.415, train_loss=0.417][0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-26 11:50:45 - on_advance_end - Epoch 10: 100%|[32m████████[0m| 1050/1050 [01:06<00:00, 15.81 batch(es)/s, lr=0.00079, val_loss=0.415, train_loss=0.417][0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-26 11:51:51 - on_advance_end - Epoch 11: 100%|[32m████████[0m| 1050/1050 [01:05<00:00, 16.01 batch(es)/s, lr=0.00077, val_loss=0.415, train_loss=0.417][0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-26 11:52:57 - on_advance_end - Epoch 12: 100%|[32m████████[0m| 1050/1050 [01:06<00:00, 15.88 batch(es)/s, lr=0.00075, val_loss=0.417, train_loss=0.416][0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-26 11:54:03 - on_advance_end - Epoch 13: 100%|[32m████████[0m| 1050/1050 [01:05<00:00, 15.94 batch(es)/s, lr=0.00073, val_loss=0.414, train_loss=0.416][0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-26 11:55:09 - on_advance_end - Epoch 14: 100%|[32m████████[0m| 1050/1050 [01:05<00:00, 15.95 batch(es)/s, lr=0.00071, val_loss=0.415, train_loss=0.416][0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-26 11:56:14 - on_advance_end - Epoch 15: 100%|[32m████████[0m| 1050/1050 [01:05<00:00, 15.96 batch(es)/s, lr=0.00069, val_loss=0.414, train_loss=0.416][0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-26 11:57:20 - on_advance_end - Epoch 16: 100%|[32m████████[0m| 1050/1050 [01:05<00:00, 16.02 batch(es)/s, lr=0.00067, val_loss=0.415, train_loss=0.416][0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-26 11:58:26 - on_advance_end - Epoch 17: 100%|[32m████████[0m| 1050/1050 [01:05<00:00, 15.93 batch(es)/s, lr=0.00065, val_loss=0.414, train_loss=0.415][0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-26 11:59:32 - on_advance_end - Epoch 18: 100%|[32m████████[0m| 1050/1050 [01:05<00:00, 16.00 batch(es)/s, lr=0.00063, val_loss=0.414, train_loss=0.415][0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-26 12:00:38 - on_advance_end - Epoch 19: 100%|[32m████████[0m| 1050/1050 [01:06<00:00, 15.88 batch(es)/s, lr=0.00061, val_loss=0.415, train_loss=0.415][0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-26 12:01:44 - on_advance_end - Epoch 20: 100%|[32m████████[0m| 1050/1050 [01:05<00:00, 15.95 batch(es)/s, lr=0.00059, val_loss=0.414, train_loss=0.415][0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-26 12:02:49 - on_advance_end - Epoch 21: 100%|[32m████████[0m| 1050/1050 [01:05<00:00, 16.00 batch(es)/s, lr=0.00057, val_loss=0.413, train_loss=0.415][0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-26 12:03:55 - on_advance_end - Epoch 22: 100%|[32m████████[0m| 1050/1050 [01:05<00:00, 16.04 batch(es)/s, lr=0.00055, val_loss=0.415, train_loss=0.414][0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-26 12:05:00 - on_advance_end - Epoch 23: 100%|[32m████████[0m| 1050/1050 [01:05<00:00, 16.05 batch(es)/s, lr=0.00053, val_loss=0.413, train_loss=0.414][0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-26 12:06:06 - on_advance_end - Epoch 24: 100%|[32m████████[0m| 1050/1050 [01:05<00:00, 15.99 batch(es)/s, lr=0.00051, val_loss=0.413, train_loss=0.414][0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-26 12:06:07 - StandardModel.<module> - Best-fit weights from EarlyStopping loaded.[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-26 12:06:07 - StandardModel.<module> - Column names for predictions are: 
+ ['dbang_decay_length_pred'][0m
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-26 12:07:08 - <module> - Writing results to /n/holylfs05/LABS/arguelles_delgado_lab/Everyone/jbook/double_cascade_identification/training_output/multiple_epochs/merged_files_Feb26/dynedge_dbang_decay_length[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-26 12:07:08 - StandardModel.<module> - Model saved to /n/holylfs05/LABS/arguelles_delgado_lab/Everyone/jbook/double_cascade_identification/training_output/multiple_epochs/merged_files_Feb26/dynedge_dbang_decay_length/model.pth[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-26 12:07:08 - StandardModel.<module> - Model state_dict saved to /n/holylfs05/LABS/arguelles_delgado_lab/Everyone/jbook/double_cascade_identification/training_output/multiple_epochs/merged_files_Feb26/dynedge_dbang_decay_length/reco_state_dict.pth[0m

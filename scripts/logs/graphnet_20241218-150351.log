@@ -1,0 +1,2 @@
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2024-12-18 15:03:51 - Logger.__init__ - Writing log to [1mlogs/graphnet_20241218-150351.log[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2024-12-18 15:03:51 - ParquetToSQLiteConverter.__call__ - Processing 2 file(s) in main thread (not multiprocessing)[0m

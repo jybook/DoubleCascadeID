@@ -1,0 +1,19 @@
+{"time":"2025-02-12T13:59:57.697700874-05:00","level":"INFO","msg":"using version","core version":"0.18.7"}
+{"time":"2025-02-12T13:59:57.698262825-05:00","level":"INFO","msg":"created symlink","path":"wandb/wandb/run-20250212_135957-jw3z151n/logs/debug-core.log"}
+{"time":"2025-02-12T13:59:57.821841914-05:00","level":"INFO","msg":"created new stream","id":"jw3z151n"}
+{"time":"2025-02-12T13:59:57.821961853-05:00","level":"INFO","msg":"stream: started","id":"jw3z151n"}
+{"time":"2025-02-12T13:59:57.8221184-05:00","level":"INFO","msg":"writer: Do: started","stream_id":"jw3z151n"}
+{"time":"2025-02-12T13:59:57.822211782-05:00","level":"INFO","msg":"handler: started","stream_id":"jw3z151n"}
+{"time":"2025-02-12T13:59:57.822220384-05:00","level":"INFO","msg":"sender: started","stream_id":"jw3z151n"}
+{"time":"2025-02-12T13:59:58.191172207-05:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-02-12T14:15:09.954746279-05:00","level":"INFO","msg":"stream: closing","id":"jw3z151n"}
+{"time":"2025-02-12T14:15:09.954920312-05:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-02-12T14:15:09.955742247-05:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-02-12T14:15:10.046130328-05:00","level":"WARN","msg":"No job ingredients found, not creating job artifact"}
+{"time":"2025-02-12T14:15:10.046203661-05:00","level":"WARN","msg":"No source type found, not creating job artifact"}
+{"time":"2025-02-12T14:15:10.046232646-05:00","level":"INFO","msg":"sender: sendDefer: no job artifact to save"}
+{"time":"2025-02-12T14:15:10.324457134-05:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-02-12T14:15:10.461848993-05:00","level":"INFO","msg":"handler: closed","stream_id":"jw3z151n"}
+{"time":"2025-02-12T14:15:10.461921726-05:00","level":"INFO","msg":"writer: Close: closed","stream_id":"jw3z151n"}
+{"time":"2025-02-12T14:15:10.461934098-05:00","level":"INFO","msg":"sender: closed","stream_id":"jw3z151n"}
+{"time":"2025-02-12T14:15:10.462508029-05:00","level":"INFO","msg":"stream: closed","id":"jw3z151n"}

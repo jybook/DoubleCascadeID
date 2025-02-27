@@ -1,0 +1,47 @@
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2024-12-29 11:28:09 - Logger.__init__ - Writing log to [1mlogs/graphnet_20241229-112809.log[0m
+[1;34mgraphnet[0m [MainProcess] [33mWARNING [0m 2024-12-29 11:28:49 - __init__ - Setting one of `transform_target` and `transform_inference`, but not the other.[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2024-12-29 11:28:49 - <module> - model targets from config: ['pid'][0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2024-12-29 11:28:49 - <module> - torch.cuda.is_available? <function is_available at 0x149823064680>[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2024-12-29 11:28:50 - StringSelectionResolver.__init__ - Resolving selection: event_no % 5 == 0 & (pid == 1 | pid == -1)[0m
+[1;34mgraphnet[0m [MainProcess] [33mWARNING [0m 2024-12-29 11:28:50 - SQLiteDataset.__init__ - Dataset is empty.[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2024-12-29 11:28:50 - StringSelectionResolver.__init__ - Resolving selection: event_no % 5 == 0 & (pid == 12 | pid == -12)[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2024-12-29 11:28:51 - StringSelectionResolver.__init__ - Resolving selection: event_no % 5 == 0 & (pid == 14| pid == -14)[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2024-12-29 11:28:51 - StringSelectionResolver.__init__ - Resolving selection: event_no % 5 == 0 & (pid == 16 | pid == -16)[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2024-12-29 11:28:52 - StringSelectionResolver.__init__ - Resolving selection: event_no % 5 == 0 & (pid == 13 | pid == -13)[0m
+[1;34mgraphnet[0m [MainProcess] [33mWARNING [0m 2024-12-29 11:28:52 - SQLiteDataset.__init__ - Dataset is empty.[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2024-12-29 11:28:52 - StringSelectionResolver.__init__ - Resolving selection: event_no % 5 == 1 & (pid == 1 | pid == -1)[0m
+[1;34mgraphnet[0m [MainProcess] [33mWARNING [0m 2024-12-29 11:28:52 - SQLiteDataset.__init__ - Dataset is empty.[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2024-12-29 11:28:52 - StringSelectionResolver.__init__ - Resolving selection: event_no % 5 == 1 & (pid == 12 | pid == -12)[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2024-12-29 11:28:52 - StringSelectionResolver.__init__ - Resolving selection: event_no % 5 == 1 & (pid == 14 | pid == -14)[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2024-12-29 11:28:53 - StringSelectionResolver.__init__ - Resolving selection: event_no % 5 == 1 & (pid == 16 | pid == -16)[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2024-12-29 11:28:53 - StringSelectionResolver.__init__ - Resolving selection: event_no % 5 == 1 & (pid == 13 | pid == -13)[0m
+[1;34mgraphnet[0m [MainProcess] [33mWARNING [0m 2024-12-29 11:28:53 - SQLiteDataset.__init__ - Dataset is empty.[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2024-12-29 11:28:53 - StringSelectionResolver.__init__ - Resolving selection: event_no % 5 > 1 & (pid == 1 | pid == -1)[0m
+[1;34mgraphnet[0m [MainProcess] [33mWARNING [0m 2024-12-29 11:28:53 - SQLiteDataset.__init__ - Dataset is empty.[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2024-12-29 11:28:53 - StringSelectionResolver.__init__ - Resolving selection: event_no % 5 > 1 & (pid == 12 | pid == -12)[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2024-12-29 11:28:54 - StringSelectionResolver.__init__ - Resolving selection: event_no % 5 > 1 & (pid == 14 | pid == -14)[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2024-12-29 11:28:54 - StringSelectionResolver.__init__ - Resolving selection: event_no % 5 > 1 & (pid == 16 | pid == -16)[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2024-12-29 11:28:54 - StringSelectionResolver.__init__ - Resolving selection: event_no % 5 > 1 & (pid == 13 | pid == -13)[0m
+[1;34mgraphnet[0m [MainProcess] [33mWARNING [0m 2024-12-29 11:28:55 - SQLiteDataset.__init__ - Dataset is empty.[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2024-12-29 11:29:12 - StandardModel.main - EarlyStopping has been added with a patience of 5.[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2024-12-29 11:29:12 - StandardModel.main - Training initiated with callbacks: ProgressBar, EarlyStopping, ModelCheckpoint[0m
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+----------------------------------------------------------------------------------------------------
+distributed_backend=gloo
+All distributed processes registered. Starting with 1 processes
+----------------------------------------------------------------------------------------------------
+
+
+  | Name              | Type       | Params
+-------------------------------------------------
+0 | _tasks            | ModuleList | 387   
+1 | _graph_definition | KNNGraph   | 0     
+2 | backbone          | DynEdge    | 1.4 M 
+-------------------------------------------------
+1.4 M     Trainable params
+0         Non-trainable params
+1.4 M     Total params
+5.516     Total estimated model params size (MB)

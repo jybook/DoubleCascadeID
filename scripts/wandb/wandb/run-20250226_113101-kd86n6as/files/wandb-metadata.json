@@ -1,0 +1,92 @@
+{
+  "os": "Linux-4.18.0-513.18.1.el8_9.x86_64-x86_64-with-glibc2.28",
+  "python": "3.11.9",
+  "startedAt": "2025-02-26T16:31:01.812766Z",
+  "program": "/n/holylfs05/LABS/arguelles_delgado_lab/Everyone/jbook/double_cascade_identification/scripts/train_estimator.py",
+  "codePath": "train_estimator.py",
+  "email": "julia.y.book@gmail.com",
+  "root": "./wandb/",
+  "host": "holygpu8a25404.rc.fas.harvard.edu",
+  "username": "jbook",
+  "executable": "/n/holylfs05/LABS/arguelles_delgado_lab/Everyone/jbook/spack/var/spack/environments/graphnet/.spack-env/view/bin/python",
+  "codePathLocal": "train_estimator.py",
+  "cpu_count": 64,
+  "cpu_count_logical": 64,
+  "gpu": "NVIDIA A100-SXM4-80GB",
+  "gpu_count": 1,
+  "disk": {
+    "/": {
+      "total": "53660876800",
+      "used": "21116280832"
+    }
+  },
+  "memory": {
+    "total": "1081284968448"
+  },
+  "cpu": {
+    "count": 64,
+    "countLogical": 64
+  },
+  "gpu_nvidia": [
+    {
+      "name": "NVIDIA A100-SXM4-80GB",
+      "memoryTotal": "85899345920",
+      "cudaCores": 6912,
+      "architecture": "Ampere"
+    }
+  ],
+  "slurm": {
+    "cluster_name": "odyssey",
+    "conf": "/etc/slurm/slurm.conf",
+    "cpus_on_node": "4",
+    "cpus_per_task": "4",
+    "gpus_on_node": "1",
+    "gtids": "0",
+    "job_account": "arguelles_delgado_lab",
+    "job_cpus_per_node": "4",
+    "job_end_time": "1740616025",
+    "job_gid": "5137",
+    "job_gpus": "2",
+    "job_id": "4847225",
+    "job_name": "interactive",
+    "job_nodelist": "holygpu8a25404",
+    "job_num_nodes": "1",
+    "job_partition": "arguelles_delgado_gpu",
+    "job_qos": "normal",
+    "job_start_time": "1740587225",
+    "job_uid": "60939",
+    "job_user": "jbook",
+    "jobid": "4847225",
+    "launch_node_ipaddr": "10.31.21.18",
+    "localid": "0",
+    "mem_per_node": "12288",
+    "mpi_type": "none",
+    "nnodes": "1",
+    "nodeid": "0",
+    "nodelist": "holygpu8a25404",
+    "oom_kill_step": "0",
+    "prio_process": "0",
+    "procid": "0",
+    "pty_port": "11473",
+    "pty_win_col": "113",
+    "pty_win_row": "34",
+    "script_context": "prolog_task",
+    "srun_comm_host": "10.31.21.18",
+    "srun_comm_port": "11474",
+    "step_id": "4294967290",
+    "step_launcher_port": "11474",
+    "step_nodelist": "holygpu8a25404",
+    "step_num_nodes": "1",
+    "step_num_tasks": "1",
+    "step_tasks_per_node": "1",
+    "stepid": "4294967290",
+    "submit_dir": "/n/home00/jbook",
+    "submit_host": "holylogin08.rc.fas.harvard.edu",
+    "task_pid": "2256651",
+    "tasks_per_node": "1",
+    "topology_addr": "main.holyoke.holyhdr.holygpu8a25404",
+    "topology_addr_pattern": "switch.switch.switch.node",
+    "tres_per_task": "cpu=4"
+  },
+  "cudaVersion": "12.4"
+}

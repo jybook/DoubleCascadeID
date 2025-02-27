@@ -1,0 +1,68 @@
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2024-12-24 16:40:33 - Logger.__init__ - Writing log to [1mlogs/graphnet_20241224-164033.log[0m
+[1;34mgraphnet[0m [MainProcess] [33mWARNING [0m 2024-12-24 16:40:35 - __init__ - Setting one of `transform_target` and `transform_inference`, but not the other.[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2024-12-24 16:40:35 - StringSelectionResolver.__init__ - Resolving selection: 60 random events ~ event_no % 5 == 0 & (dummy_pid == 1 | dummy_pid == -1)[0m
+[1;34mgraphnet[0m [MainProcess] [33mWARNING [0m 2024-12-24 16:40:35 - StringSelectionResolver._resolve_string_selection_to_indices - Requested 60 events but selection only contains 3. Returning all of these.[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2024-12-24 16:40:35 - StringSelectionResolver.__init__ - Resolving selection: 60 random events ~ event_no % 5 == 0 & (dummy_pid == 12 | dummy_pid == -12)[0m
+[1;34mgraphnet[0m [MainProcess] [33mWARNING [0m 2024-12-24 16:40:35 - StringSelectionResolver._resolve_string_selection_to_indices - Requested 60 events but selection only contains 1. Returning all of these.[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2024-12-24 16:40:36 - StringSelectionResolver.__init__ - Resolving selection: 60 random events ~ event_no % 5 == 0 & (dummy_pid == 14| dummy_pid == -14)[0m
+[1;34mgraphnet[0m [MainProcess] [33mWARNING [0m 2024-12-24 16:40:36 - StringSelectionResolver._resolve_string_selection_to_indices - Requested 60 events but selection only contains 3. Returning all of these.[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2024-12-24 16:40:36 - StringSelectionResolver.__init__ - Resolving selection: 60 random events ~ event_no % 5 == 0 & (dummy_pid == 16 | dummy_pid == -16)[0m
+[1;34mgraphnet[0m [MainProcess] [33mWARNING [0m 2024-12-24 16:40:36 - StringSelectionResolver._resolve_string_selection_to_indices - Requested 60 events but selection only contains 1. Returning all of these.[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2024-12-24 16:40:36 - StringSelectionResolver.__init__ - Resolving selection: 60 random events ~ event_no % 5 == 0 & (dummy_pid == 13 | dummy_pid == -13)[0m
+[1;34mgraphnet[0m [MainProcess] [33mWARNING [0m 2024-12-24 16:40:36 - StringSelectionResolver._resolve_string_selection_to_indices - Requested 60 events but selection only contains 5. Returning all of these.[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2024-12-24 16:40:36 - StringSelectionResolver.__init__ - Resolving selection: 60 random events ~ event_no % 5 == 1 & (dummy_pid == 1 | dummy_pid == -1)[0m
+[1;34mgraphnet[0m [MainProcess] [33mWARNING [0m 2024-12-24 16:40:36 - StringSelectionResolver._resolve_string_selection_to_indices - Requested 60 events but selection only contains 1. Returning all of these.[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2024-12-24 16:40:36 - StringSelectionResolver.__init__ - Resolving selection: 60 random events ~ event_no % 5 == 1 & (dummy_pid == 12 | dummy_pid == -12)[0m
+[1;34mgraphnet[0m [MainProcess] [33mWARNING [0m 2024-12-24 16:40:36 - StringSelectionResolver._resolve_string_selection_to_indices - Requested 60 events but selection only contains 1. Returning all of these.[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2024-12-24 16:40:36 - StringSelectionResolver.__init__ - Resolving selection: 60 random events ~ event_no % 5 == 1 & (dummy_pid == 14 | dummy_pid == -14)[0m
+[1;34mgraphnet[0m [MainProcess] [33mWARNING [0m 2024-12-24 16:40:36 - StringSelectionResolver._resolve_string_selection_to_indices - Requested 60 events but selection only contains 2. Returning all of these.[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2024-12-24 16:40:36 - StringSelectionResolver.__init__ - Resolving selection: 60 random events ~ event_no % 5 == 1 & (dummy_pid == 16 | dummy_pid == -16)[0m
+[1;34mgraphnet[0m [MainProcess] [33mWARNING [0m 2024-12-24 16:40:36 - StringSelectionResolver._resolve_string_selection_to_indices - Requested 60 events but selection only contains 3. Returning all of these.[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2024-12-24 16:40:36 - StringSelectionResolver.__init__ - Resolving selection: 60 random events ~ event_no % 5 == 1 & (dummy_pid == 13 | dummy_pid == -13)[0m
+[1;34mgraphnet[0m [MainProcess] [33mWARNING [0m 2024-12-24 16:40:36 - StringSelectionResolver._resolve_string_selection_to_indices - Requested 60 events but selection only contains 2. Returning all of these.[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2024-12-24 16:40:36 - StringSelectionResolver.__init__ - Resolving selection: 60 random events ~ event_no % 5 > 1 & (dummy_pid == 1 | dummy_pid == -1)[0m
+[1;34mgraphnet[0m [MainProcess] [33mWARNING [0m 2024-12-24 16:40:36 - StringSelectionResolver._resolve_string_selection_to_indices - Requested 60 events but selection only contains 6. Returning all of these.[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2024-12-24 16:40:37 - StringSelectionResolver.__init__ - Resolving selection: 60 random events ~ event_no % 5 > 1 & (dummy_pid == 12 | dummy_pid == -12)[0m
+[1;34mgraphnet[0m [MainProcess] [33mWARNING [0m 2024-12-24 16:40:37 - StringSelectionResolver._resolve_string_selection_to_indices - Requested 60 events but selection only contains 8. Returning all of these.[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2024-12-24 16:40:37 - StringSelectionResolver.__init__ - Resolving selection: 60 random events ~ event_no % 5 > 1 & (dummy_pid == 14 | dummy_pid == -14)[0m
+[1;34mgraphnet[0m [MainProcess] [33mWARNING [0m 2024-12-24 16:40:37 - StringSelectionResolver._resolve_string_selection_to_indices - Requested 60 events but selection only contains 5. Returning all of these.[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2024-12-24 16:40:37 - StringSelectionResolver.__init__ - Resolving selection: 60 random events ~ event_no % 5 > 1 & (dummy_pid == 16 | dummy_pid == -16)[0m
+[1;34mgraphnet[0m [MainProcess] [33mWARNING [0m 2024-12-24 16:40:37 - StringSelectionResolver._resolve_string_selection_to_indices - Requested 60 events but selection only contains 6. Returning all of these.[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2024-12-24 16:40:37 - StringSelectionResolver.__init__ - Resolving selection: 60 random events ~ event_no % 5 > 1 & (dummy_pid == 13 | dummy_pid == -13)[0m
+[1;34mgraphnet[0m [MainProcess] [33mWARNING [0m 2024-12-24 16:40:37 - StringSelectionResolver._resolve_string_selection_to_indices - Requested 60 events but selection only contains 3. Returning all of these.[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2024-12-24 16:40:37 - StandardModel.main - EarlyStopping has been added with a patience of 5.[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2024-12-24 16:40:37 - StandardModel.main - Training initiated with callbacks: ProgressBar, EarlyStopping, ModelCheckpoint[0m
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+----------------------------------------------------------------------------------------------------
+distributed_backend=gloo
+All distributed processes registered. Starting with 1 processes
+----------------------------------------------------------------------------------------------------
+
+
+  | Name              | Type       | Params
+-------------------------------------------------
+0 | _tasks            | ModuleList | 387   
+1 | _graph_definition | KNNGraph   | 0     
+2 | backbone          | DynEdge    | 1.4 M 
+-------------------------------------------------
+1.4 M     Trainable params
+0         Non-trainable params
+1.4 M     Total params
+5.516     Total estimated model params size (MB)
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2024-12-24 16:40:47 - on_advance_end - Epoch  0: 100%|[32m████████████████████████[0m| 2/2 [00:01<00:00,  1.19 batch(es)/s, lr=5.95e-5, val_loss=0.956, train_loss=0.946][0m
+`Trainer.fit` stopped: `max_epochs=1` reached.
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2024-12-24 16:40:47 - StandardModel.<module> - Best-fit weights from EarlyStopping loaded.[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2024-12-24 16:40:47 - <module> - Writing results to /n/holylfs05/LABS/arguelles_delgado_lab/Everyone/jbook/double_cascade_identification/training_output/train_model/prometheus-events/dynedge_dummy_pid_example[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2024-12-24 16:40:47 - StandardModel.<module> - Model state_dict saved to /n/holylfs05/LABS/arguelles_delgado_lab/Everyone/jbook/double_cascade_identification/training_output/train_model/prometheus-events/dynedge_dummy_pid_example/state_dict.pth[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2024-12-24 16:40:47 - StandardModel.<module> - Model saved to /n/holylfs05/LABS/arguelles_delgado_lab/Everyone/jbook/double_cascade_identification/training_output/train_model/prometheus-events/dynedge_dummy_pid_example/model.pth[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2024-12-24 16:40:47 - <module> - config.target: ['dummy_pid'][0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2024-12-24 16:40:47 - <module> - prediction_columns: ['noise', 'muon', 'neutrino'][0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2024-12-24 16:40:47 - StandardModel.<module> - Column names for predictions are: 
+ ['noise', 'muon', 'neutrino'][0m
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs

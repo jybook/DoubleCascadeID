@@ -1,0 +1,19 @@
+{"time":"2025-02-26T11:31:01.822197339-05:00","level":"INFO","msg":"using version","core version":"0.18.7"}
+{"time":"2025-02-26T11:31:01.822566212-05:00","level":"INFO","msg":"created symlink","path":"wandb/wandb/run-20250226_113101-kd86n6as/logs/debug-core.log"}
+{"time":"2025-02-26T11:31:02.070020419-05:00","level":"INFO","msg":"created new stream","id":"kd86n6as"}
+{"time":"2025-02-26T11:31:02.070159108-05:00","level":"INFO","msg":"stream: started","id":"kd86n6as"}
+{"time":"2025-02-26T11:31:02.070443534-05:00","level":"INFO","msg":"writer: Do: started","stream_id":"kd86n6as"}
+{"time":"2025-02-26T11:31:02.070594006-05:00","level":"INFO","msg":"handler: started","stream_id":"kd86n6as"}
+{"time":"2025-02-26T11:31:02.0706084-05:00","level":"INFO","msg":"sender: started","stream_id":"kd86n6as"}
+{"time":"2025-02-26T11:31:02.556632436-05:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-02-26T11:33:45.705132985-05:00","level":"INFO","msg":"api: retrying HTTP error","status":500,"url":"https://api.wandb.ai/graphql"}
+{"time":"2025-02-26T11:33:48.011046404-05:00","level":"INFO","msg":"api: retrying HTTP error","status":500,"url":"https://api.wandb.ai/graphql"}
+{"time":"2025-02-26T11:33:52.544775119-05:00","level":"INFO","msg":"api: retrying HTTP error","status":500,"url":"https://api.wandb.ai/graphql"}
+{"time":"2025-02-26T11:34:01.01416676-05:00","level":"INFO","msg":"api: retrying HTTP error","status":500,"url":"https://api.wandb.ai/graphql"}
+{"time":"2025-02-26T11:34:18.55431332-05:00","level":"INFO","msg":"api: retrying HTTP error","status":500,"url":"https://api.wandb.ai/graphql"}
+{"time":"2025-02-26T11:34:47.557637437-05:00","level":"INFO","msg":"stream: closing","id":"kd86n6as"}
+{"time":"2025-02-26T11:34:47.557755923-05:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-02-26T11:34:47.558639696-05:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-02-26T11:34:56.5468674-05:00","level":"INFO","msg":"api: retrying HTTP error","status":500,"url":"https://api.wandb.ai/graphql"}
+{"time":"2025-02-26T11:35:56.608840291-05:00","level":"INFO","msg":"api: retrying HTTP error","status":500,"url":"https://api.wandb.ai/graphql"}
+{"time":"2025-02-26T11:36:56.665670269-05:00","level":"INFO","msg":"api: retrying HTTP error","status":500,"url":"https://api.wandb.ai/graphql"}

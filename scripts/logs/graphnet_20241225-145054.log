@@ -1,0 +1,9 @@
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2024-12-25 14:50:54 - Logger.__init__ - Writing log to [1mlogs/graphnet_20241225-145054.log[0m
+[1;34mgraphnet[0m [MainProcess] [33mWARNING [0m 2024-12-25 14:50:57 - __init__ - Setting one of `transform_target` and `transform_inference`, but not the other.[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2024-12-25 14:50:57 - StringSelectionResolver.__init__ - Resolving selection: event_no % 5 == 0 & (pid == 1 | pid == -1)[0m
+[1;34mgraphnet[0m [MainProcess] [33mWARNING [0m 2024-12-25 14:50:57 - SQLiteDataset.__init__ - Dataset is empty.[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2024-12-25 14:50:57 - StringSelectionResolver.__init__ - Resolving selection: event_no % 5 == 0 & (pid == 12 | pid == -12)[0m
+[1;34mgraphnet[0m [MainProcess] [33mWARNING [0m 2024-12-25 14:50:57 - SQLiteDataset.__init__ - Dataset is empty.[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2024-12-25 14:50:57 - StringSelectionResolver.__init__ - Resolving selection: event_no % 5 == 0 & (pid == 14| pid == -14)[0m
+[1;34mgraphnet[0m [MainProcess] [33mWARNING [0m 2024-12-25 14:50:57 - SQLiteDataset.__init__ - Dataset is empty.[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2024-12-25 14:50:57 - StringSelectionResolver.__init__ - Resolving selection: event_no % 5 == 0 & (pid == 16 | pid == -16)[0m

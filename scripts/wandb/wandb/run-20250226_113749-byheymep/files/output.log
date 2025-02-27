@@ -1,0 +1,92 @@
+[1;34mgraphnet[0m [MainProcess] [33mWARNING [0m 2025-02-26 11:37:49 - __init__ - GraphNeTDataModule did not receive an argument for `test_selection` and will therefore not have a prediction dataloader available.[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-26 11:37:49 - __init__ - GraphNeTDataModule did not receive an for `selection`. Selection will will automatically be created with a split of train: 0.9 and validation: 0.1[0m
+/n/holylfs05/LABS/arguelles_delgado_lab/Everyone/jbook/spack/var/spack/environments/graphnet/.spack-env/view/lib/python3.11/site-packages/torch/utils/data/dataloader.py:558: UserWarning: This DataLoader will create 10 worker processes in total. Our suggested max number of worker in current system is 4, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+[1;34mgraphnet[0m [MainProcess] [33mWARNING [0m 2025-02-26 11:37:51 - __init__ - Setting one of `transform_target` and `transform_inference`, but not the other.[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-26 11:37:51 - StandardModel.main - EarlyStopping has been added with a patience of 3.[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-26 11:37:51 - StandardModel.main - Training initiated with callbacks: ProgressBar, EarlyStopping, ModelCheckpoint[0m
+/n/holylfs05/LABS/arguelles_delgado_lab/Everyone/jbook/spack/var/spack/environments/graphnet/.spack-env/view/lib/python3.11/site-packages/lightning_fabric/plugins/environments/slurm.py:204: The `srun` command is available on your system but is not used. HINT: If your intention is to run Lightning on SLURM, prepend your python command with `srun` like so: srun python train_estimator.py ...
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+Within easy_model.py:
+Length of dataloader:  1050
+length of val_dataloader 1051
+You are using a CUDA device ('NVIDIA A100-SXM4-80GB') that has Tensor Cores. To properly utilize them, you should set `torch.set_float32_matmul_precision('medium' | 'high')` which will trade-off precision for performance. For more details, read https://pytorch.org/docs/stable/generated/torch.set_float32_matmul_precision.html#torch.set_float32_matmul_precision
+Initializing distributed: GLOBAL_RANK: 0, MEMBER: 1/1
+----------------------------------------------------------------------------------------------------
+distributed_backend=nccl
+All distributed processes registered. Starting with 1 processes
+----------------------------------------------------------------------------------------------------
+
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+/n/holylfs05/LABS/arguelles_delgado_lab/Everyone/jbook/spack/var/spack/environments/graphnet/.spack-env/view/lib/python3.11/site-packages/torch/optim/lr_scheduler.py:28: UserWarning: The verbose parameter is deprecated. Please use get_last_lr() to access the learning rate.
+  warnings.warn("The verbose parameter is deprecated. Please use get_last_lr() "
+
+  | Name              | Type       | Params
+-------------------------------------------------
+0 | _tasks            | ModuleList | 129
+1 | _graph_definition | KNNGraph   | 0
+2 | backbone          | DynEdge    | 1.4 M
+-------------------------------------------------
+1.4 M     Trainable params
+0         Non-trainable params
+1.4 M     Total params
+5.529     Total estimated model params size (MB)
+Epoch  0: 100%|[32m████████[0m| 1050/1050 [01:09<00:00, 15.04 batch(es)/s, lr=0.00099, val_loss=0.427, train_loss=0.447][0m
+/n/holylfs05/LABS/arguelles_delgado_lab/Everyone/jbook/spack/opt/spack/linux-rocky8-icelake/gcc-8.5.0/python-3.11.9-3kjyspb5ggk7awajofefkc4r24aa6rao/lib/python3.11/multiprocessing/popen_fork.py:66: RuntimeWarning: Using fork() can cause Polars to deadlock in the child process.
+In addition, using fork() with Python in general is a recipe for mysterious
+deadlocks and crashes.
+
+The most likely reason you are seeing this error is because you are using the
+multiprocessing module on Linux, which uses fork() by default. This will be
+fixed in Python 3.14. Until then, you want to use the "spawn" context instead.
+
+See https://docs.pola.rs/user-guide/misc/multiprocessing/ for details.
+
+If you really know what your doing, you can silence this warning with the warning module
+or by setting POLARS_ALLOW_FORKING_THREAD=1.
+
+  self.pid = os.fork()
+Epoch  1: 100%|[32m████████[0m| 1050/1050 [01:06<00:00, 15.76 batch(es)/s, lr=0.00097, val_loss=0.423, train_loss=0.423][0m
+Epoch  2: 100%|[32m████████[0m| 1050/1050 [01:06<00:00, 15.79 batch(es)/s, lr=0.00095, val_loss=0.418, train_loss=0.421][0m
+Epoch  3: 100%|[32m████████[0m| 1050/1050 [01:06<00:00, 15.76 batch(es)/s, lr=0.00093, val_loss=0.418, train_loss=0.420][0m
+Epoch  4: 100%|[32m████████[0m| 1050/1050 [01:05<00:00, 16.08 batch(es)/s, lr=0.00091, val_loss=0.417, train_loss=0.419][0m
+Epoch  5: 100%|[32m████████[0m| 1050/1050 [01:06<00:00, 15.79 batch(es)/s, lr=0.00089, val_loss=0.417, train_loss=0.419][0m
+Epoch  6: 100%|[32m████████[0m| 1050/1050 [01:05<00:00, 16.09 batch(es)/s, lr=0.00087, val_loss=0.417, train_loss=0.418][0m
+Epoch  7: 100%|[32m████████[0m| 1050/1050 [01:05<00:00, 16.10 batch(es)/s, lr=0.00085, val_loss=0.419, train_loss=0.418][0m
+Epoch  8: 100%|[32m████████[0m| 1050/1050 [01:04<00:00, 16.30 batch(es)/s, lr=0.00083, val_loss=0.416, train_loss=0.417][0m
+Epoch  9: 100%|[32m████████[0m| 1050/1050 [01:44<00:00, 10.04 batch(es)/s, lr=0.00081, val_loss=0.415, train_loss=0.417][0m
+Epoch 10: 100%|[32m████████[0m| 1050/1050 [01:06<00:00, 15.80 batch(es)/s, lr=0.00079, val_loss=0.415, train_loss=0.417][0m
+Epoch 11: 100%|[32m████████[0m| 1050/1050 [01:05<00:00, 16.00 batch(es)/s, lr=0.00077, val_loss=0.415, train_loss=0.417][0m
+Epoch 12: 100%|[32m████████[0m| 1050/1050 [01:06<00:00, 15.88 batch(es)/s, lr=0.00075, val_loss=0.417, train_loss=0.416][0m
+Epoch 13: 100%|[32m████████[0m| 1050/1050 [01:05<00:00, 15.93 batch(es)/s, lr=0.00073, val_loss=0.414, train_loss=0.416][0m
+Epoch 14: 100%|[32m████████[0m| 1050/1050 [01:05<00:00, 15.95 batch(es)/s, lr=0.00071, val_loss=0.415, train_loss=0.416][0m
+Epoch 15: 100%|[32m████████[0m| 1050/1050 [01:05<00:00, 15.95 batch(es)/s, lr=0.00069, val_loss=0.414, train_loss=0.416][0m
+Epoch 16: 100%|[32m████████[0m| 1050/1050 [01:05<00:00, 16.02 batch(es)/s, lr=0.00067, val_loss=0.415, train_loss=0.416][0m
+Epoch 17: 100%|[32m████████[0m| 1050/1050 [01:05<00:00, 15.93 batch(es)/s, lr=0.00065, val_loss=0.414, train_loss=0.415][0m
+Epoch 18: 100%|[32m████████[0m| 1050/1050 [01:05<00:00, 15.99 batch(es)/s, lr=0.00063, val_loss=0.414, train_loss=0.415][0m
+Epoch 19: 100%|[32m████████[0m| 1050/1050 [01:06<00:00, 15.88 batch(es)/s, lr=0.00061, val_loss=0.415, train_loss=0.415][0m
+Epoch 20: 100%|[32m████████[0m| 1050/1050 [01:05<00:00, 15.95 batch(es)/s, lr=0.00059, val_loss=0.414, train_loss=0.415][0m
+Epoch 21: 100%|[32m████████[0m| 1050/1050 [01:05<00:00, 16.00 batch(es)/s, lr=0.00057, val_loss=0.413, train_loss=0.415][0m
+Epoch 22: 100%|[32m████████[0m| 1050/1050 [01:05<00:00, 16.04 batch(es)/s, lr=0.00055, val_loss=0.415, train_loss=0.414][0m
+Epoch 23: 100%|[32m████████[0m| 1050/1050 [01:05<00:00, 16.05 batch(es)/s, lr=0.00053, val_loss=0.413, train_loss=0.414][0m
+Epoch 24: 100%|[32m████████[0m| 1050/1050 [01:05<00:00, 15.99 batch(es)/s, lr=0.00051, val_loss=0.413, train_loss=0.414][0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-26 12:06:07 - StandardModel.<module> - Best-fit weights from EarlyStopping loaded.[0m
+additional attributes are ['dbang_decay_length', 'pid', 'energy', 'event_weight', 'azimuth', 'zenith']
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-26 12:06:07 - StandardModel.<module> - Column names for predictions are:
+ ['dbang_decay_length_pred'][0m
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+/n/holylfs05/LABS/arguelles_delgado_lab/Everyone/jbook/spack/var/spack/environments/graphnet/.spack-env/view/lib/python3.11/site-packages/pytorch_lightning/trainer/connectors/logger_connector/logger_connector.py:75: Starting from v1.9.0, `tensorboardX` has been removed as a dependency of the `pytorch_lightning` package, due to potential conflicts with other packages in the ML ecosystem. For this reason, `logger=True` will use `CSVLogger` as the default logger, unless the `tensorboard` or `tensorboardX` packages are found. Please `pip install lightning[extra]` or one of them to enable TensorBoard support by default
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+Predicting DataLoader 0: 100%|[32m███████████████████████████████████████[0m| 1051/1051 [00:28<00:00, 36.40 batch(es)/s][0m
+saved columns are:  Index(['dbang_decay_length_pred', 'dbang_decay_length', 'pid', 'energy',
+       'event_weight', 'azimuth', 'zenith', 'event_no'],
+      dtype='object')
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-26 12:07:08 - <module> - Writing results to /n/holylfs05/LABS/arguelles_delgado_lab/Everyone/jbook/double_cascade_identification/training_output/multiple_epochs/merged_files_Feb26/dynedge_dbang_decay_length[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-26 12:07:08 - StandardModel.<module> - Model saved to /n/holylfs05/LABS/arguelles_delgado_lab/Everyone/jbook/double_cascade_identification/training_output/multiple_epochs/merged_files_Feb26/dynedge_dbang_decay_length/model.pth[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-26 12:07:08 - StandardModel.<module> - Model state_dict saved to /n/holylfs05/LABS/arguelles_delgado_lab/Everyone/jbook/double_cascade_identification/training_output/multiple_epochs/merged_files_Feb26/dynedge_dbang_decay_length/reco_state_dict.pth[0m

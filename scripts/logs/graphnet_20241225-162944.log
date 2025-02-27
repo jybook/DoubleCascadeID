@@ -1,0 +1,17 @@
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2024-12-25 16:29:44 - Logger.__init__ - Writing log to [1mlogs/graphnet_20241225-162944.log[0m
+[1;34mgraphnet[0m [MainProcess] [33mWARNING [0m 2024-12-25 16:29:46 - __init__ - Setting one of `transform_target` and `transform_inference`, but not the other.[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2024-12-25 16:29:46 - StringSelectionResolver.__init__ - Resolving selection: 60 random events ~ event_no % 5 == 0 & (dummy_pid == 1 | dummy_pid == -1)[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2024-12-25 16:29:47 - StringSelectionResolver.__init__ - Resolving selection: 60 random events ~ event_no % 5 == 0 & (dummy_pid == 12 | dummy_pid == -12)[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2024-12-25 16:29:47 - StringSelectionResolver.__init__ - Resolving selection: 60 random events ~ event_no % 5 == 0 & (dummy_pid == 14| dummy_pid == -14)[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2024-12-25 16:29:47 - StringSelectionResolver.__init__ - Resolving selection: 60 random events ~ event_no % 5 == 0 & (dummy_pid == 16 | dummy_pid == -16)[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2024-12-25 16:29:47 - StringSelectionResolver.__init__ - Resolving selection: 60 random events ~ event_no % 5 == 0 & (dummy_pid == 13 | dummy_pid == -13)[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2024-12-25 16:29:47 - StringSelectionResolver.__init__ - Resolving selection: 60 random events ~ event_no % 5 == 1 & (dummy_pid == 1 | dummy_pid == -1)[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2024-12-25 16:29:47 - StringSelectionResolver.__init__ - Resolving selection: 60 random events ~ event_no % 5 == 1 & (dummy_pid == 12 | dummy_pid == -12)[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2024-12-25 16:29:47 - StringSelectionResolver.__init__ - Resolving selection: 60 random events ~ event_no % 5 == 1 & (dummy_pid == 14 | dummy_pid == -14)[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2024-12-25 16:29:47 - StringSelectionResolver.__init__ - Resolving selection: 60 random events ~ event_no % 5 == 1 & (dummy_pid == 16 | dummy_pid == -16)[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2024-12-25 16:29:47 - StringSelectionResolver.__init__ - Resolving selection: 60 random events ~ event_no % 5 == 1 & (dummy_pid == 13 | dummy_pid == -13)[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2024-12-25 16:29:48 - StringSelectionResolver.__init__ - Resolving selection: 60 random events ~ event_no % 5 > 1 & (dummy_pid == 1 | dummy_pid == -1)[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2024-12-25 16:29:48 - StringSelectionResolver.__init__ - Resolving selection: 60 random events ~ event_no % 5 > 1 & (dummy_pid == 12 | dummy_pid == -12)[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2024-12-25 16:29:48 - StringSelectionResolver.__init__ - Resolving selection: 60 random events ~ event_no % 5 > 1 & (dummy_pid == 14 | dummy_pid == -14)[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2024-12-25 16:29:48 - StringSelectionResolver.__init__ - Resolving selection: 60 random events ~ event_no % 5 > 1 & (dummy_pid == 16 | dummy_pid == -16)[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2024-12-25 16:29:48 - StringSelectionResolver.__init__ - Resolving selection: 60 random events ~ event_no % 5 > 1 & (dummy_pid == 13 | dummy_pid == -13)[0m

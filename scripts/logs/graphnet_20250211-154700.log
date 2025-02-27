@@ -1,0 +1,43 @@
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-11 15:47:00 - Logger.__init__ - Writing log to [1mlogs/graphnet_20250211-154700.log[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-11 15:47:00 - <module> - features: ['dom_x', 'dom_y', 'dom_z', 'dom_time', 'charge', 'rde', 'pmt_area'][0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-11 15:47:00 - <module> - truth: ['energy', 'energy_track', 'energy_cascade', 'position_x', 'position_y', 'position_z', 'azimuth', 'zenith', 'pid', 'elasticity', 'interaction_type', 'inelasticity', 'stopped_muon'][0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-11 15:47:00 - main - No `val_dataloader_kwargs` given. This arg has been set to `train_dataloader_kwargs` with `shuffle` = False.[0m
+[1;34mgraphnet[0m [MainProcess] [33mWARNING [0m 2025-02-11 15:47:00 - __init__ - GraphNeTDataModule did not receive an argument for `test_selection` and will therefore not have a prediction dataloader available.[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-11 15:47:00 - __init__ - GraphNeTDataModule did not receive an for `selection`. Selection will will automatically be created with a split of train: 0.9 and validation: 0.1[0m
+[1;34mgraphnet[0m [MainProcess] [33mWARNING [0m 2025-02-11 15:47:04 - __init__ - Setting one of `transform_target` and `transform_inference`, but not the other.[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-11 15:47:04 - StandardModel.main - EarlyStopping has been added with a patience of 3.[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-11 15:47:04 - StandardModel.main - Training initiated with callbacks: ProgressBar, EarlyStopping, ModelCheckpoint[0m
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+You are using a CUDA device ('NVIDIA A100-SXM4-80GB') that has Tensor Cores. To properly utilize them, you should set `torch.set_float32_matmul_precision('medium' | 'high')` which will trade-off precision for performance. For more details, read https://pytorch.org/docs/stable/generated/torch.set_float32_matmul_precision.html#torch.set_float32_matmul_precision
+----------------------------------------------------------------------------------------------------
+distributed_backend=nccl
+All distributed processes registered. Starting with 1 processes
+----------------------------------------------------------------------------------------------------
+
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+
+  | Name              | Type       | Params
+-------------------------------------------------
+0 | _tasks            | ModuleList | 129   
+1 | _graph_definition | KNNGraph   | 0     
+2 | backbone          | DynEdge    | 1.4 M 
+-------------------------------------------------
+1.4 M     Trainable params
+0         Non-trainable params
+1.4 M     Total params
+5.529     Total estimated model params size (MB)
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-11 16:08:10 - on_advance_end - Epoch  0: 100%|[32m█[0m| 22392/22392 [20:50<00:00, 17.90 batch(es)/s, lr=1.01e-5,[0m
+`Trainer.fit` stopped: `max_epochs=1` reached.
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-11 16:08:11 - StandardModel.<module> - Best-fit weights from EarlyStopping loaded.[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-11 16:08:11 - StandardModel.<module> - Column names for predictions are: 
+ ['energy_pred'][0m
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+[1;34mgraphnet[0m [MainProcess] [33mWARNING [0m 2025-02-11 16:17:57 - StandardModel.<module> - Could not automatically adjust length of additional attribute 'energy' to match length of predictions.This error can be caused by heavy disagreement between number of examples in the dataset vs. actual events in the dataloader, e.g.  heavy filtering of events in `collate_fn` passed to `dataloader`. This can also be caused by requesting pulse-level attributes for `Task`s that produce event-level predictions. Attribute skipped.[0m
+[1;34mgraphnet[0m [MainProcess] [33mWARNING [0m 2025-02-11 16:17:57 - StandardModel.<module> - Could not automatically adjust length of additional attribute 'event_no' to match length of predictions.This error can be caused by heavy disagreement between number of examples in the dataset vs. actual events in the dataloader, e.g.  heavy filtering of events in `collate_fn` passed to `dataloader`. This can also be caused by requesting pulse-level attributes for `Task`s that produce event-level predictions. Attribute skipped.[0m

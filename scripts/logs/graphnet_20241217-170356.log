@@ -1,0 +1,3 @@
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2024-12-17 17:03:56 - Logger.__init__ - Writing log to [1mlogs/graphnet_20241217-170356.log[0m
+[1;34mgraphnet[0m [MainProcess] [33mWARNING [0m 2024-12-17 17:04:05 - __init__ - Setting one of `transform_target` and `transform_inference`, but not the other.[0m
+[1;34mgraphnet[0m [MainProcess] [33mWARNING [0m 2024-12-17 17:04:05 - ParquetDataset.__call__ - Dataset is empty.[0m

@@ -1,0 +1,29 @@
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2024-12-25 16:08:30 - Logger.__init__ - Writing log to [1mlogs/graphnet_20241225-160830.log[0m
+[1;34mgraphnet[0m [MainProcess] [33mWARNING [0m 2024-12-25 16:08:33 - __init__ - Setting one of `transform_target` and `transform_inference`, but not the other.[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2024-12-25 16:08:33 - StringSelectionResolver.__init__ - Resolving selection: event_no % 5 == 0 & (pid == 1 | pid == -1)[0m
+[1;34mgraphnet[0m [MainProcess] [33mWARNING [0m 2024-12-25 16:08:33 - SQLiteDataset.__init__ - Dataset is empty.[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2024-12-25 16:08:33 - StringSelectionResolver.__init__ - Resolving selection: event_no % 5 == 0 & (pid == 12 | pid == -12)[0m
+[1;34mgraphnet[0m [MainProcess] [33mWARNING [0m 2024-12-25 16:08:33 - SQLiteDataset.__init__ - Dataset is empty.[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2024-12-25 16:08:33 - StringSelectionResolver.__init__ - Resolving selection: event_no % 5 == 0 & (pid == 14| pid == -14)[0m
+[1;34mgraphnet[0m [MainProcess] [33mWARNING [0m 2024-12-25 16:08:33 - SQLiteDataset.__init__ - Dataset is empty.[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2024-12-25 16:08:33 - StringSelectionResolver.__init__ - Resolving selection: event_no % 5 == 0 & (pid == 16 | pid == -16)[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2024-12-25 16:08:33 - StringSelectionResolver.__init__ - Resolving selection: event_no % 5 == 0 & (pid == 13 | pid == -13)[0m
+[1;34mgraphnet[0m [MainProcess] [33mWARNING [0m 2024-12-25 16:08:33 - SQLiteDataset.__init__ - Dataset is empty.[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2024-12-25 16:08:33 - StringSelectionResolver.__init__ - Resolving selection: event_no % 5 == 1 & (pid == 1 | pid == -1)[0m
+[1;34mgraphnet[0m [MainProcess] [33mWARNING [0m 2024-12-25 16:08:33 - SQLiteDataset.__init__ - Dataset is empty.[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2024-12-25 16:08:33 - StringSelectionResolver.__init__ - Resolving selection: event_no % 5 == 1 & (pid == 12 | pid == -12)[0m
+[1;34mgraphnet[0m [MainProcess] [33mWARNING [0m 2024-12-25 16:08:33 - SQLiteDataset.__init__ - Dataset is empty.[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2024-12-25 16:08:33 - StringSelectionResolver.__init__ - Resolving selection: event_no % 5 == 1 & (pid == 14 | pid == -14)[0m
+[1;34mgraphnet[0m [MainProcess] [33mWARNING [0m 2024-12-25 16:08:33 - SQLiteDataset.__init__ - Dataset is empty.[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2024-12-25 16:08:33 - StringSelectionResolver.__init__ - Resolving selection: event_no % 5 == 1 & (pid == 16 | pid == -16)[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2024-12-25 16:08:34 - StringSelectionResolver.__init__ - Resolving selection: event_no % 5 == 1 & (pid == 13 | pid == -13)[0m
+[1;34mgraphnet[0m [MainProcess] [33mWARNING [0m 2024-12-25 16:08:34 - SQLiteDataset.__init__ - Dataset is empty.[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2024-12-25 16:08:34 - StringSelectionResolver.__init__ - Resolving selection: event_no % 5 > 1 & (pid == 1 | pid == -1)[0m
+[1;34mgraphnet[0m [MainProcess] [33mWARNING [0m 2024-12-25 16:08:34 - SQLiteDataset.__init__ - Dataset is empty.[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2024-12-25 16:08:34 - StringSelectionResolver.__init__ - Resolving selection: event_no % 5 > 1 & (pid == 12 | pid == -12)[0m
+[1;34mgraphnet[0m [MainProcess] [33mWARNING [0m 2024-12-25 16:08:34 - SQLiteDataset.__init__ - Dataset is empty.[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2024-12-25 16:08:34 - StringSelectionResolver.__init__ - Resolving selection: event_no % 5 > 1 & (pid == 14 | pid == -14)[0m
+[1;34mgraphnet[0m [MainProcess] [33mWARNING [0m 2024-12-25 16:08:34 - SQLiteDataset.__init__ - Dataset is empty.[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2024-12-25 16:08:34 - StringSelectionResolver.__init__ - Resolving selection: event_no % 5 > 1 & (pid == 16 | pid == -16)[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2024-12-25 16:08:34 - StringSelectionResolver.__init__ - Resolving selection: event_no % 5 > 1 & (pid == 13 | pid == -13)[0m
+[1;34mgraphnet[0m [MainProcess] [33mWARNING [0m 2024-12-25 16:08:34 - SQLiteDataset.__init__ - Dataset is empty.[0m

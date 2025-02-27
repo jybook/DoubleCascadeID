@@ -1,0 +1,52 @@
+arguments:
+  backbone:
+    ModelConfig:
+      arguments:
+        activation_layer: null
+        add_global_variables_after_pooling: false
+        add_norm_layer: false
+        dynedge_layer_sizes: null
+        features_subset: null
+        global_pooling_schemes: [min, max, mean, sum]
+        nb_inputs: 7
+        nb_neighbours: 8
+        post_processing_layer_sizes: null
+        readout_layer_sizes: null
+        skip_readout: false
+      class_name: DynEdge
+  gnn: null
+  graph_definition:
+    ModelConfig:
+      arguments:
+        columns: [0, 1, 2]
+        detector:
+          ModelConfig:
+            arguments: {}
+            class_name: IceCube86
+        dtype: torch.float32
+        input_feature_names: [dom_x, dom_y, dom_z, dom_time, charge, rde, pmt_area]
+        nb_nearest_neighbours: 8
+        node_definition: null
+        perturbation_dict: null
+        seed: null
+      class_name: KNNGraph
+  optimizer_class: '!class torch.optim.adam Adam'
+  optimizer_kwargs: {eps: 0.001, lr: 0.001}
+  scheduler_class: '!class graphnet.training.callbacks PiecewiseLinearLR'
+  scheduler_config: {interval: step}
+  scheduler_kwargs:
+    factors: [0.01, 1, 0.01]
+    milestones: [0, 525.0, 52500]
+  tasks:
+  - ModelConfig:
+      arguments:
+        hidden_size: 128
+        loss_function:
+          ModelConfig:
+            arguments: {}
+            class_name: LogCoshLoss
+        target_labels: dbang_decay_length
+        transform_inference: '!lambda x: torch.pow(10, x)'
+        transform_prediction_and_target: '!lambda x: torch.log10(x)'
+      class_name: DoubleCascadeReconstruction
+class_name: StandardModel
