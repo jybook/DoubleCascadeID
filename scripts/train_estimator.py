@@ -9,7 +9,7 @@ from torch.optim.adam import Adam
 
 from graphnet.constants import EXAMPLE_DATA_DIR, EXAMPLE_OUTPUT_DIR
 PARENT_DIR = '/n/holylfs05/LABS/arguelles_delgado_lab/Everyone/jbook/double_cascade_identification/'
-EXAMPLE_DATA_DIR = '/n/holylfs05/LABS/arguelles_delgado_lab/Lab/IceCube_MC/HNL/sqlite/190307/merged' #PARENT_DIR + 'parquet' #'sqlite' 
+# EXAMPLE_DATA_DIR = '/n/holylfs05/LABS/arguelles_delgado_lab/Lab/IceCube_MC/HNL/sqlite/190307/merged' #PARENT_DIR + 'parquet' #'sqlite' 
 EXAMPLE_OUTPUT_DIR = PARENT_DIR + 'training_output'
 
 from graphnet.data.constants import FEATURES, TRUTH
@@ -17,16 +17,24 @@ from graphnet.models import StandardModel
 # from graphnet.models.detector.prometheus import Prometheus
 from graphnet.models.detector.icecube import IceCube86
 from graphnet.models.gnn import DynEdge
-from graphnet.models.graphs import KNNGraph
+from graphnet.models.graphs import KNNGraph#, KNNGraphRRWP
 from graphnet.models.task.reconstruction import EnergyReconstruction
 from graphnet.models.task.custom_tasks import DoubleCascadeReconstruction
 from graphnet.training.callbacks import PiecewiseLinearLR
-from graphnet.training.loss_functions import LogCoshLoss
+from graphnet.training.loss_functions import LogCoshLoss, MAELoss
 from graphnet.utilities.argparse import ArgumentParser
 from graphnet.utilities.logging import Logger
 from graphnet.data import GraphNeTDataModule
 from graphnet.data.dataset import SQLiteDataset
 from graphnet.data.dataset import ParquetDataset
+from graphnet.data.dataloader import DataLoader
+# from graphnet.models import StandardModel
+# from graphnet.utilities.argparse import ArgumentParser
+# from graphnet.utilities.config import (
+#     DatasetConfig,
+#     ModelConfig,
+#     TrainingConfig,
+# )
 
 
 # # Constants
@@ -35,13 +43,16 @@ from graphnet.data.dataset import ParquetDataset
 import os
 import glob as glob
 import numpy as np
-data_parent_dir = '/n/holylfs05/LABS/arguelles_delgado_lab/Lab/IceCube_MC/HNL/sqlite2/'
-dataset_ids = [190301, 190302, 190303, 190304, 190305, 190306, 190307, 190308, 'oscNext']
-# dataset_ids = [190301]
+data_parent_dir = '/n/holylfs05/LABS/arguelles_delgado_lab/Lab/IceCube_MC/HNL/sqlite_L3'
+# data_parent_dir = '/n/holylfs05/LABS/arguelles_delgado_lab/Lab/IceCube_MC/HNL/sqlite_decay_constraint/quality_cut'
+# dataset_ids = [190311, 190312, 190313, 190314]#, 190315, 190316, 190317, 190318]
+dataset_ids = [190311, 190312, 190314]
+
 # Include oscNext for background, exclude for signal
 dataset_paths = []
 for did in dataset_ids:
     dataset_paths.extend(glob.glob(os.path.join(data_parent_dir, "{}".format(did), "merged/merged.db")))
+# dataset_paths.extend(glob.glob(os.path.join("/n/holylfs05/LABS/arguelles_delgado_lab/Lab/IceCube_MC/HNL/sqlite2/oscNext", "merged/merged.db")))
 print("datasets: \n")
 print(dataset_paths)
 
@@ -87,6 +98,7 @@ def main(
     wandb: bool = False,
 ) -> None:
     """Run example."""
+
     # Construct Logger
     logger = Logger()
 
@@ -96,7 +108,7 @@ def main(
         wandb_dir = "./wandb/"
         os.makedirs(wandb_dir, exist_ok=True)
         wandb_logger = WandbLogger(
-            project="double_cascade_estimator",
+            project="double_cascade_estimator_quality_cut",
             # entity="graphnet-team",
             save_dir=wandb_dir,
             log_model=True,
@@ -121,18 +133,15 @@ def main(
             "max_epochs": max_epochs,
         },
         "dataset_reference": SQLiteDataset,
-        # if path.endswith(".db")
-        # else ParquetDataset,
     }
 
-    archive = os.path.join(EXAMPLE_OUTPUT_DIR, "multiple_epochs")
+    archive = os.path.join(EXAMPLE_OUTPUT_DIR, "new_MC")
     run_name = "dynedge_{}".format(config["target"])
     if wandb:
         # Log configuration to W&B
         wandb_logger.experiment.config.update(config)
 
     # Define graph representation
-    # graph_definition = KNNGraph(detector=Prometheus())
     graph_definition = KNNGraph(
         detector=IceCube86(), 
         input_feature_names=['dom_x', 'dom_y', 'dom_z', 'dom_time', 'charge', 'rde', 'pmt_area'],
@@ -148,51 +157,55 @@ def main(
             "graph_definition": graph_definition,
             "pulsemaps": [config["pulsemap"]],
             "path": config["path"],
-            #"selection": np.ones(len(config["path"])) #To use an ensemble dataset, a selection is required, and none doesn't seem to do it.
         },
         train_dataloader_kwargs={
-            "batch_size": config["batch_size"],
-            "num_workers": config["num_workers"],
-            "drop_last": True, # skip incomplete final batches
-            # "collate_fn": collate_fn_debug,
-        },
-        test_dataloader_kwargs={
-            "batch_size": config["batch_size"],
-            "num_workers": config["num_workers"],
-            "drop_last": True, # skip incomplete final batches
-            # "collate_fn": collate_fn_debug,
-        },
-        validation_dataloader_kwargs={
             "batch_size": config["batch_size"],
             "num_workers": config["num_workers"],
             "drop_last": False, # skip incomplete final batches
             # "collate_fn": collate_fn_debug,
         },
+        # test_dataloader_kwargs={
+        #     "batch_size": config["batch_size"],
+        #     "num_workers": config["num_workers"],
+        #     "drop_last": False, # skip incomplete final batches
+        #     # "collate_fn": collate_fn_debug,
+        # },
+        # validation_dataloader_kwargs={
+        #     "batch_size": config["batch_size"],
+        #     "num_workers": config["num_workers"],
+        #     "drop_last": False, # skip incomplete final batches
+        #     # "collate_fn": collate_fn_debug,
+        # },
+        # train_val_split = [0.75, 0.25,]
     )
 
     training_dataloader = dm.train_dataloader
     validation_dataloader = dm.val_dataloader
-    # testing_dataloader = dm.test_dataloader
+
+    if len(training_dataloader)==len(validation_dataloader):
+        print("Oh no! training and validation dataloaders are the same length!")
+        return
 
     # Building model
 
     backbone = DynEdge(
         nb_inputs=graph_definition.nb_outputs,
         global_pooling_schemes=["min", "max", "mean", "sum"],
+        dynedge_layer_sizes=[(128, 256), (336, 256), (336, 256), (336, 256), (336, 256)] #One layer more than default
     )
     task = DoubleCascadeReconstruction(
         hidden_size=backbone.nb_outputs,
         target_labels=config["target"],
-        loss_function=LogCoshLoss(),
-        # transform_prediction_and_target=lambda x: torch.log10(x),
-        # transform_inference=lambda x: torch.pow(10, x),
+        loss_function=MAELoss(),#LogCoshLoss(),
+        transform_prediction_and_target=lambda x: torch.where(x>0.1,torch.log10(x),-1),
+        transform_inference=lambda x: torch.pow(10, x),
     )
     model = StandardModel(
         graph_definition=graph_definition,
         backbone=backbone,
         tasks=[task],
         optimizer_class=Adam,
-        optimizer_kwargs={"lr": 1e-03, "eps": 1e-03},
+        optimizer_kwargs={"lr": 1e-03, "eps": 1e-2},#Raised both from 1e-3
         scheduler_class=PiecewiseLinearLR,
         scheduler_kwargs={
             "milestones": [
@@ -218,7 +231,7 @@ def main(
 
     # Get predictions
     additional_attributes = model.target_labels
-    additional_attributes.extend(['pid', 'energy', 'event_weight', 'azimuth', 'zenith'])
+    additional_attributes.extend(['pid', 'energy', 'event_weight', 'azimuth', 'zenith', 'position_x', 'position_y', 'position_z', 'elasticity', 'interaction_type', 'inelasticity'])
     assert isinstance(additional_attributes, list)  # mypy
     print("additional attributes are", additional_attributes)
 
@@ -227,26 +240,32 @@ def main(
         additional_attributes=additional_attributes + ["event_no"],
         gpus=config["fit"]["gpus"],
     )
+    training_predictions = model.predict_as_dataframe(
+        training_dataloader,
+        additional_attributes=additional_attributes + ["event_no"],
+        gpus=config["fit"]["gpus"],
+    )
     print("saved columns are: ", results.keys())
     
     # Save predictions and model to file
-    db_name = "all_files_corrected_Feb26" #path.split("/")[-1].split(".")[0]
+    db_name = "L3" #path.split("/")[-1].split(".")[0]
     path = os.path.join(archive, db_name, run_name)
     logger.info(f"Writing results to {path}")
     os.makedirs(path, exist_ok=True)
 
     # Save results as .csv
-    results.to_csv(f"{path}/estimator_results.csv")
+    results.to_csv(f"{path}/MAEloss_validation_results.csv")
+    training_predictions.to_csv(f"{path}/MAEloss_training_results.csv")
 
     # Save full model (including weights) to .pth file - not version safe
     # Note: Models saved as .pth files in one version of graphnet
     #       may not be compatible with a different version of graphnet.
-    model.save(f"{path}/model.pth")
+    model.save(f"{path}/MAEloss_model.pth")
 
     # Save model config and state dict - Version safe save method.
     # This method of saving models is the safest way.
-    model.save_state_dict(f"{path}/reco_state_dict.pth")
-    model.save_config(f"{path}/model_config.yml")
+    model.save_state_dict(f"{path}/MAEloss_reco_state_dict.pth")
+    model.save_config(f"{path}/MAEloss_model_config.yml")
 
     
     
@@ -288,9 +307,9 @@ Train GNN model without the use of config files.
 
     parser.with_standard_arguments(
         ("gpus", torch.cuda.device_count()),
-        ("max-epochs", 25),
-        ("early-stopping-patience", 2),
-        ("batch-size", 50),
+        ("max-epochs", 150),
+        ("early-stopping-patience", 15),
+        ("batch-size", 15),
         "num-workers",
     )
 

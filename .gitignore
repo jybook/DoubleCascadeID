@@ -1,1 +1,8 @@
 slurm_logs/
+wandb/
+old_folders/
+.ipynb_checkpoints
+scripts/lightning_logs
+scripts/wandb
+scripts/logs
+scripts/__pycache__
