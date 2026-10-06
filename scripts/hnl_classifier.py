@@ -286,7 +286,7 @@ Train GNN classifier without the use of config files.
 
     parser.with_standard_arguments(
         ("gpus", torch.cuda.device_count()),
-        ("max-epochs", 150),
+        ("max-epochs", 80),
         ("early-stopping-patience", 3),
         ("batch-size", 8),
     )

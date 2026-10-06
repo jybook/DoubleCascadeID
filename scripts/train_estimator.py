@@ -9,7 +9,6 @@ from torch.optim.adam import Adam
 
 from graphnet.constants import EXAMPLE_DATA_DIR, EXAMPLE_OUTPUT_DIR
 PARENT_DIR = '/n/holylfs05/LABS/arguelles_delgado_lab/Everyone/jbook/double_cascade_identification/'
-# EXAMPLE_DATA_DIR = '/n/holylfs05/LABS/arguelles_delgado_lab/Lab/IceCube_MC/HNL/sqlite/190307/merged' #PARENT_DIR + 'parquet' #'sqlite' 
 EXAMPLE_OUTPUT_DIR = PARENT_DIR + 'training_output'
 
 from graphnet.data.constants import FEATURES, TRUTH
@@ -35,24 +34,20 @@ from graphnet.data.dataloader import DataLoader
 #     ModelConfig,
 #     TrainingConfig,
 # )
+from pytorch_lightning.callbacks import ModelCheckpoint
 
 
-# # Constants
-# features = FEATURES.PROMETHEUS
-# truth = TRUTH.PROMETHEUS
 import os
 import glob as glob
 import numpy as np
-data_parent_dir = '/n/holylfs05/LABS/arguelles_delgado_lab/Lab/IceCube_MC/HNL/sqlite_L3'
-# data_parent_dir = '/n/holylfs05/LABS/arguelles_delgado_lab/Lab/IceCube_MC/HNL/sqlite_decay_constraint/quality_cut'
-# dataset_ids = [190311, 190312, 190313, 190314]#, 190315, 190316, 190317, 190318]
-dataset_ids = [190311, 190312, 190314]
+data_parent_dir = '/n/holylfs05/LABS/arguelles_delgado_lab/Lab/IceCube_MC/HNL/reconstructed/estimator_training/signal'
+dataset_ids = [190300]
 
 # Include oscNext for background, exclude for signal
 dataset_paths = []
 for did in dataset_ids:
     dataset_paths.extend(glob.glob(os.path.join(data_parent_dir, "{}".format(did), "merged/merged.db")))
-# dataset_paths.extend(glob.glob(os.path.join("/n/holylfs05/LABS/arguelles_delgado_lab/Lab/IceCube_MC/HNL/sqlite2/oscNext", "merged/merged.db")))
+
 print("datasets: \n")
 print(dataset_paths)
 
@@ -62,6 +57,7 @@ truth = TRUTH.ICECUBE86
 truth.remove("interaction_time") #we just call it time, in future iterations, maybe replace with the correct variable name?
 truth.append('dbang_decay_length')
 truth.append('event_weight')
+truth.append('time')
 print("Truth: ",truth)
 print("features: ", features)
 # Some code to help debug the "list index out of range" error (from Rasmus)
@@ -108,8 +104,7 @@ def main(
         wandb_dir = "./wandb/"
         os.makedirs(wandb_dir, exist_ok=True)
         wandb_logger = WandbLogger(
-            project="double_cascade_estimator_quality_cut",
-            # entity="graphnet-team",
+            project="double_cascade_estimator_pid_cut",
             save_dir=wandb_dir,
             log_model=True,
         )
@@ -135,7 +130,7 @@ def main(
         "dataset_reference": SQLiteDataset,
     }
 
-    archive = os.path.join(EXAMPLE_OUTPUT_DIR, "new_MC")
+    archive = os.path.join(EXAMPLE_OUTPUT_DIR, "190300")
     run_name = "dynedge_{}".format(config["target"])
     if wandb:
         # Log configuration to W&B
@@ -191,7 +186,7 @@ def main(
     backbone = DynEdge(
         nb_inputs=graph_definition.nb_outputs,
         global_pooling_schemes=["min", "max", "mean", "sum"],
-        dynedge_layer_sizes=[(128, 256), (336, 256), (336, 256), (336, 256), (336, 256)] #One layer more than default
+        # dynedge_layer_sizes=[(128, 256), (336, 256), (336, 256), (336, 256), (336, 256)] #One layer more than default
     )
     task = DoubleCascadeReconstruction(
         hidden_size=backbone.nb_outputs,
@@ -205,7 +200,7 @@ def main(
         backbone=backbone,
         tasks=[task],
         optimizer_class=Adam,
-        optimizer_kwargs={"lr": 1e-03, "eps": 1e-2},#Raised both from 1e-3
+        optimizer_kwargs={"lr": 1e-03, "eps": 1e-3},#Raised both from 1e-3
         scheduler_class=PiecewiseLinearLR,
         scheduler_kwargs={
             "milestones": [
@@ -219,6 +214,18 @@ def main(
             "interval": "step",
         },
     )
+    db_name = "L3"
+    save_path = os.path.join(archive, db_name, run_name)
+
+# Add a checkpoint at the validation loss minimum
+    checkpoint_callback = ModelCheckpoint(
+        monitor='val_loss',
+        mode='min',
+        save_top_k=1,
+        dirpath= save_path,
+        filename='best_model-{epoch:02d}-{val_loss:.2f}' # Filename format
+    )
+
 
     # Training model
     model.fit(
@@ -226,6 +233,7 @@ def main(
         validation_dataloader,
         early_stopping_patience=config["early_stopping_patience"],
         logger=wandb_logger if wandb else None,
+        callbacks=[checkpoint_callback],
         **config["fit"],
     )
 
@@ -249,7 +257,7 @@ def main(
     
     # Save predictions and model to file
     db_name = "L3" #path.split("/")[-1].split(".")[0]
-    path = os.path.join(archive, db_name, run_name)
+    path = save_path #os.path.join(archive, db_name, run_name)
     logger.info(f"Writing results to {path}")
     os.makedirs(path, exist_ok=True)
 
@@ -281,7 +289,7 @@ Train GNN model without the use of config files.
     parser.add_argument(
         "--path",
         help="Path to dataset file (default: %(default)s)",
-        default=f"{EXAMPLE_DATA_DIR}/merged.db" #f"{EXAMPLE_DATA_DIR}/sqlite/prometheus/prometheus-events.db",
+        default=f"{EXAMPLE_DATA_DIR}/merged.db",
     )
 
     parser.add_argument(

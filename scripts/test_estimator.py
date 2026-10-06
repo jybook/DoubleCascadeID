@@ -1,4 +1,4 @@
-"""Apply trained model to new sqlite fiels"""
+"""Apply trained model to new sqlite files"""
 
 import os
 from typing import Any, Dict, List, Optional

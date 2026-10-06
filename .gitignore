@@ -5,4 +5,5 @@ old_folders/
 scripts/lightning_logs
 scripts/wandb
 scripts/logs
-scripts/__pycache__
+scripts/__pycache_
+scripts/out_of_date
